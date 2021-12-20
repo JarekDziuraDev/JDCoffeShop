@@ -8,6 +8,7 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <script src="https://kit.fontawesome.com/0224eaa365.js" crossorigin="anonymous"></script>
+  
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
@@ -24,5 +25,7 @@
 
   {{ 'bootstrap.min.js' | asset_url | script_tag }}
   {{ 'application.js' | asset_url | script_tag }}
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </body>
 </html>
