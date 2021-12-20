@@ -1,25 +1,32 @@
+<!-- {% section 'snippet' %} -->
 
-<section class="inner-hero-section">
-    {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}">
-    {% else %}
-        {% capture current %}{% cycle 1,2 %}{% endcapture %}
-        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg'}}
-    {% endif %}
-    
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1>{{ section.settings.title }}</h1>
-                <p>{{ section.settings>description }}</p>
+
+<section class="hero-section container">
+        
+        <div class="hero-img justify-content-center">
+            {% if section.settings.image != blank %}
+                <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}">
+            {% else %}
+                {% capture current %}{% cycle 1,2 %}{% endcapture %}
+                {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg'}}
+            {% endif %}
+        </div>
+        
+
+        <div class="container py-5 hero-content">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1>{{ section.settings.title }}</h1>
+                    <p>{{ section.settings.description }}</p>
+                </div>
             </div>
         </div>
-    </div>
+
 </section>
 
 {% schema %}
 {
-    "name": "Hero Section",
+    "name": "Hero",
     "class": "hero-section",
     "settings": [
         {
@@ -30,14 +37,14 @@
         {
             "type": "text",
             "id": "title",
-            "default": "Example Text Heading",
+            "default": "Example Heading",
             "label": "Heading Title"
         },
         {
             "type": "richtext",
             "id": "description",
-            "default": "<p>Example Text Paragraf</p>",
-            "label": "Heading Description"
+            "default": "<p>Example paragraf</p>",
+            "label": "Heading Title"
         }
     ],
     "presets": [
@@ -46,5 +53,6 @@
             "name": "Simple Hero"
         }
     ]
+
 }
 {% endschema %}
