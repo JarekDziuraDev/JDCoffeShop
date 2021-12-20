@@ -33,13 +33,17 @@
             <div class="carousel-content">
               <div class="carousel-content-info">
                 <a href="{{ product.url | within: collection }}">
-                <h4>{{ product.title }}</h4>
+                  <h4>{{ product.title }}</h4>
                 </a>
                 <p>{{ product.price | money }}</p>
+                <!-- {% for variant in product.variants %}
+                  <p>{{ variant.id }}</p>
+                {% endfor %} -->
               </div>
               <div class="carousel-content-buy">
                 <form action="#" id="addToCartForm">
-                  <input type="hidden" name="id" id="itemId" value="{{ product.id[0] }}">
+                  {% assign variant = product.variants %}
+                  <input type="hidden" name="id" id="itemId" value="{{ variant[0].id }}">
                   <input type="hidden" name="quantity" value="1" min="1">
                   <button type="submit" class="btn btn-secondary ">
                     <i class="fas fa-cart-plus"></i>

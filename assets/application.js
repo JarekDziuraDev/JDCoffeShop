@@ -1,6 +1,3 @@
-// Put your application javascript here
-
-
 var addToCartForm = document.querySelector("#addToCartForm");
 
 addToCartForm.addEventListener("submit", (e) => {
@@ -14,7 +11,8 @@ addToCartForm.addEventListener("submit", (e) => {
             }
         ]
     };
-
+    console.log(formData);
+    
     fetch('/cart/add.js', {
         method: 'POST',
         headers: {
