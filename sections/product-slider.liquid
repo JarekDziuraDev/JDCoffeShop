@@ -38,7 +38,7 @@
                   <h4>{{ product.title }}</h4>
                 </a>
                 <p>{{ product.price | money }}</p>
-                <p>{{ variant[0].id }}</p>
+                <!-- <p>{{ variant[0].id }}</p> -->
               </div>
               <div class="carousel-content-buy">
                 
@@ -60,66 +60,6 @@
     </div>
 </div>
 
-    
-<style>
-  .featured-collection-slider {
-    background-color: rgba(30,30,30,0.2);
-  }
-
-  .section-header {
-    display: flex;
-    width: 100%;
-    height: 150px;
-    align-items: center;
-    justify-content: center;
-    color: rgba(100, 34, 23, 0.733);
-  }
-
-  
-
-  .featured-collection-slider .carousel-cell{
-    display: flex;  
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-  }
-
-  .carousel-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    width: 300px;
-    height: 100px;
-    background-color: rgba(30,30,30,0.5);
-    color: wheat;
-    left: 20%;
-    bottom: 10%;
-  }
-
-
-
-  .carousel-content-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .carousel-content-buy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-  }
-
-  .flickity-button:disabled{
-    pointer-events: all!important;
-  }
-    
-    
-</style>
 
 {% schema %}
 {
