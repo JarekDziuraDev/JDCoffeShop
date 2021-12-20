@@ -18,7 +18,6 @@ html, body {
 
 // NAVIGATION
 .header {
-
     a.nav-link {
         text-decoration: none;
         color: rgba(100, 34, 23, 0.733);
@@ -42,17 +41,23 @@ html, body {
 
     .navbar-brand {
         font-family: 'Pacifico', cursive;
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         color: rgba(100, 34, 23, 0.733);
     }
 
     .navbar-toggler {
-        font-size: 2rem;
+        font-size: 3rem;
         color: rgba(158, 43, 22, 0.733);
         background-color: transparent;
         border: none;
         padding: 10px 6px;
         outline: none;
+    }
+
+    .navbar-collapse{
+        .navbar-nav {
+            font-size: 2rem;
+        }
     }
 }
 
@@ -70,11 +75,12 @@ html, body {
     .hero-img svg {
     position: absolute;
     top: 0;
-    bottom: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     object-fit: cover;
     
@@ -95,3 +101,13 @@ html, body {
 }
 
 
+//Featured Collection
+.carousel-content a {
+    text-decoration: none;
+    color: wheat;
+    font-weight: 500;
+}
+
+.carousel-content a:hover {
+    text-decoration: underline;
+}
