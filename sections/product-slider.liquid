@@ -28,6 +28,8 @@
     
     <div class="products-carousel js-flickity" data-flickity='{{ flickity_options }}'>
         {% for product in collection.products limit: product_limit %}
+        {% assign variant = product.variants %}
+
           <div class="carousel-cell">
             <img class="img-explore" src="{{ product.featured_image | img_url: 'master'}}">
             <div class="carousel-content">
@@ -36,19 +38,18 @@
                   <h4>{{ product.title }}</h4>
                 </a>
                 <p>{{ product.price | money }}</p>
-                <!-- {% for variant in product.variants %}
-                  <p>{{ variant.id }}</p>
-                {% endfor %} -->
+                <p>{{ variant[0].id }}</p>
               </div>
               <div class="carousel-content-buy">
-                <form action="#" id="addToCartForm">
-                  {% assign variant = product.variants %}
-                  <input type="hidden" name="id" id="itemId" value="{{ variant[0].id }}">
+                
+                <form action="#" class="addToCartForm" id="addToCartForm">
+                  <input class="itemId" type="hidden" name="id" id="itemId" value="{{ variant[0].id }}">
                   <input type="hidden" name="quantity" value="1" min="1">
                   <button type="submit" class="btn btn-secondary ">
                     <i class="fas fa-cart-plus"></i>
                     Add to cart
                   </button>
+                
                 </form>
               </div>
             </div>
